@@ -15,7 +15,9 @@
    const sendLink =() =>
     {
         console.log("hello");
-        fetch("https://run.glot.io/languages")
+        fetch("https://run.glot.io/languages", {
+            mode: "no-cors"
+        })
         .then(function (response) {
             return response.json();
         })
