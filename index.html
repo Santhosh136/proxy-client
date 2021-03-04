@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Ajax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <p></p>
+    <button onclick="sendLink();">click</button>
+</body>
+<script>
+   const sendLink =() =>
+    {
+        console.log("hello");
+        fetch("https://run.glot.io/languages")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (myJson) {
+            console.log(myJson);
+        })
+        .catch(function (error) {
+            console.log("Error: " + error);
+        });
+    }
+</script>
+</html>
